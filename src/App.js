@@ -1,17 +1,28 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 
 //import Task from './components/task';
-import Item from './components/item';
+import Item from './components/Item';
+import NewForm from './components/NewForm'
 
-function App() {
-  return (
-    <div>
-      <h1>Esto es: </h1>
-      <Item parametro="elemento 1" title="titulo del elemento 1" />
-      <Item parametro="elemento 2"/>
-    </div>
-  );
+class App extends Component {
+  StyleCss() {
+    return {
+      fontSize: '80px',
+      color: 'red',
+      textDecoration: 'none'
+    }
+  }
+  render (){
+    return (
+      <div>
+        <h1 style={this.StyleCss()}>App React: </h1>
+        <Item parametro="elemento 1" title="titulo del elemento 1" />
+        <Item parametro="elemento 2"/>
+        <NewForm/>
+      </div>
+    );
+  }
 }
 
 export default App;
